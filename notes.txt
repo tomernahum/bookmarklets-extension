@@ -1,0 +1,12 @@
+
+Extensions have 3 contexts where code runs:
+- popup (when you click on the extension)
+- browser page
+- service worker / Background
+
+
+browser extension api is a standard but not implemented exactly the same on different browsers (atow) (i think).
+chrome.* namespace is used by chrome and supported by firefox and safari
+browser.* namespace works in firefox and safari but not chrome. 
+
+for manifest v2 chrome does not support promises, but for manifest v3 it does.
