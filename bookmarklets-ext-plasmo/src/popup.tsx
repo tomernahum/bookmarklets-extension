@@ -24,7 +24,8 @@ function IndexPopup() {
         display: "flex",
         flexDirection: "column",
         padding: 1,
-        minWidth: 500
+        width: 500,
+        minHeight: 250
       }}
     >
       <h1>
@@ -35,7 +36,7 @@ function IndexPopup() {
         marginTop: 5
       }}>
         {items.map((item) => {
-          return <Item item={item} setItems={setItems}/>
+          return <Item item={item} setItems={setItems}  key={item.id}/>
         })}
       </div>
 
@@ -141,7 +142,7 @@ function AddBookMarkletButton({setItems}: {
     <button
       onClick={() => {
         
-        const itemName = window.prompt("Enter dispaly name")
+        const itemName = window.prompt("Enter display name")
 
         if (!itemName) return
 

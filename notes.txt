@@ -8,5 +8,18 @@ Extensions have 3 contexts where code runs:
 browser extension api is a standard but not implemented exactly the same on different browsers (atow) (i think).
 chrome.* namespace is used by chrome and supported by firefox and safari
 browser.* namespace works in firefox and safari but not chrome. 
+same thing with "browser_action" vs "action"
 
 for manifest v2 chrome does not support promises, but for manifest v3 it does.
+
+
+
+
+activeTab permission is for when you click the extension i think, tabs is for background/automatic script but displays scary warning when installing
+
+
+
+- I don't think i can make this extension in manifest v3, because you are not allowed to run dynamic/arbitrary/eval code for security reasons (and anticompetitive reasons maybe), 
+- only place you can eval code is in "sandboxes", which I think can't run on any arbitrary page
+- Can still make manifest v2, chrome will start to stop to support it June 2024
+- NEVERMIND also look into this actually ! https://developer.chrome.com/docs/extensions/reference/api/userScripts

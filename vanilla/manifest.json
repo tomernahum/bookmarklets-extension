@@ -3,10 +3,31 @@
     "name": "My Extension",
     "version":"0.1",
 
-    "background": {
-        "service_worker": "service_worker.js",
-        "type": "module"
-    }
     
 
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.mozilla.org/*",
+                "*://*.google.com/*",
+                "*://*.example.com/*"
+            ],
+            "js": ["pinkBackground.js"]}
+    ],
+
+    "action": {
+        "default_popup": "popup.html"
+    },
+
+    "background": {
+        "service_worker": "background.js"
+    },
+
+
+
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "scripting"
+    ]
 }
