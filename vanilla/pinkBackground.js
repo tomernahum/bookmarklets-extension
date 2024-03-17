@@ -17,9 +17,12 @@ async function getCurrentTab() {
 
 // let done = false;
 // window.addEventListener("load", () => {
-//     if (done) return
 //     document.body.style.background = "Indigo";
 //     // window.open("https://www.ttools.io", "_blank")
 //     window.open("javascript:(function(){alert('hello')})()")
 //     done = true;
 // })
+
+window.addEventListener("load", () => {
+    document.body.style.background = "Indigo";
+})

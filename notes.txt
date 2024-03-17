@@ -10,7 +10,7 @@ chrome.* namespace is used by chrome and supported by firefox and safari
 browser.* namespace works in firefox and safari but not chrome. 
 same thing with "browser_action" vs "action"
 
-for manifest v2 chrome does not support promises, but for manifest v3 it does.
+for manifest v2 chrome does not support promises, but for manifest v3 it does. mozilla  has a polyfill library for chrome mv2
 
 
 
@@ -19,7 +19,26 @@ activeTab permission is for when you click the extension i think, tabs is for ba
 
 
 
-- I don't think i can make this extension in manifest v3, because you are not allowed to run dynamic/arbitrary/eval code for security reasons (and anticompetitive reasons maybe), 
-- only place you can eval code is in "sandboxes", which I think can't run on any arbitrary page
-- Can still make manifest v2, chrome will start to stop to support it June 2024
-- NEVERMIND also look into this actually ! https://developer.chrome.com/docs/extensions/reference/api/userScripts
+as of manifest v3, chrome has killed the ability to run arbitrary/dynamic/eval scripts. there are some ways still supported though
+
+Ways to run arbitrary code
+    - inside a sandbox (doesnt fit my use case i think)
+    - Probably not contentScripts api??
+        - i think this does not support user generated / arbitrary code registration/execution, but not 100% clear
+    - userScripts api
+        - doesn't work in firefox yet. 
+            - firefox currently has an api with the same name that is only for manifest v2, not to be confused
+        - in chrome requires extension users to enable developer mode
+
+- chrome manifest v3 version has to be through userScripts api which does not work on firefox
+- can make a chrome version plus a firefox version? can abstract the functionality
+
+
+Manifest v2 deprecation timeline
+- Chrome will start to stop supporting it June 2024
+- Firefox currently has no plans to stop support and says they will give at least 12 month notice before they do
+
+
+What should i build
+- manifest v2 
+- manifest v3 with userscripts api
