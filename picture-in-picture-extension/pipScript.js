@@ -18,5 +18,5 @@ function getVideo() {
     }
 }
 
-// getVideo().requestPictureInPicture()
-document.querySelector('video')?.requestPictureInPicture()
+getVideo().requestPictureInPicture()
+//document.querySelector('video')?.requestPictureInPicture()

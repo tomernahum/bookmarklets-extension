@@ -1,0 +1,15 @@
+"description_planned_for_chrome_web_store": 
+
+
+
+Injects code into all websites to manually opt you out of various analytics services (Currently: umami, plausible, posthog, fathom). These analytics services provide a way to opt out so the website developers/administrators don't get tracked themselves and mess up the analytics data. This extension injects this code into all webpages automatically, so you can avoid being tracked or so you can avoid messing up the data of your own website, without having to manually perform the opt out on every website you run. 
+
+Feel free to disable this extension once you visit all the websites you want to opt out of, provided that service remembers your opt out (like if it works by setting a localstorage value and you don't regularly clear your localstorage)
+
+Feel free to email me with any suggestions or out of date opt-out code (you can see any extension's code with crx viewer btw).
+
+
+
+
+
+localstorage values into all webpages before loading them, which opt you out of various analytics. this increases privacy (although currently all the analytics services this works for are marketed as privacy respecting), and it makes it easier to not track yourself if youare the one who owns these websites. Feel free to disable this extension once you visit all websites you want to opt out of. Current localstorage values set: umami.disabled=1, plausible_ignore=true.   Related extension: https://chromewebstore.google.com/detail/simple-analytics/ehkndchainpkdfpnancgobgfnfjnmmeh
